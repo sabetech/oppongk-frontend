@@ -1,12 +1,13 @@
-import './App.css'
 import Login from './pages/auth/Login'
+import Home from './pages/main/Home'
 
 function App() {
   
 
   return (
-    <div className="App">
-        <Login />
+    <div >
+        {/* <Login /> */}
+        <Home />
     </div>
   )
 }

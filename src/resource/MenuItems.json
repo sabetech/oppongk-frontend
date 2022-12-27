@@ -1,0 +1,32 @@
+{
+    "main_menu": [
+        {
+            "title": "Customers",
+            "icon": "customers"
+        },
+        {
+            "title": "Items",
+            "icon": "items"
+        },
+        {
+            "title": "Suppliers",
+            "icon": "suppliers"
+        },
+        {
+            "title": "Receivings",
+            "icon": "receivings"
+        },
+        {
+            "title": "Sales",
+            "icon": "sales"
+        },
+        {
+            "title": "Expenses",
+            "icon": "expenses"
+        },
+        {
+            "title": "Report",
+            "icon": "reports"
+        }
+    ]
+}
