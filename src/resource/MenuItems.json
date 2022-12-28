@@ -1,0 +1,39 @@
+{
+    "main_menu": [
+        {
+            "title": "Customers",
+            "path": "/customers",
+            "icon": "customers"
+        },
+        {
+            "title": "Items",
+            "path": "/items",
+            "icon": "items"
+        },
+        {
+            "title": "Suppliers",
+            "path": "/suppliers",
+            "icon": "suppliers"
+        },
+        {
+            "title": "Receivings",
+            "path": "/receivings",
+            "icon": "receivings"
+        },
+        {
+            "title": "Sales",
+            "path": "/sales",
+            "icon": "sales"
+        },
+        {
+            "title": "Expenses",
+            "path": "/expenses",
+            "icon": "expenses"
+        },
+        {
+            "title": "Report",
+            "path": "/reports",
+            "icon": "reports"
+        }
+    ]
+}
