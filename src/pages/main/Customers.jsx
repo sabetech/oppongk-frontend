@@ -26,3 +26,16 @@ export default function Customers() {
         </div>
     );
 }
+
+function CustomerTable() {
+
+    const columnsSchema = [
+        { field: 'id', headerName: 'ID', width: 70 },
+        { field: 'firstName', headerName: 'First name', width: 130 },
+        { field: 'lastName', headerName: 'Last name', width: 130 },
+        { field: 'phone', headerName: 'Phone number', width: 80 },
+        { field: 'total_spent', headerName: 'Total Spent', width: 120 },
+    ];
+
+    const rows = [];
+}
