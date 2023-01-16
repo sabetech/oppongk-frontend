@@ -6,7 +6,9 @@ import AppBar  from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import MenuList from '../resource/MenuItems.json';
+import MenuItems from '../components/MenuItems';
 import { Link, Outlet } from 'react-router-dom'
+
 
 export default function Root() {
 
@@ -52,33 +54,6 @@ function MainMenuBar() {
     );
 }
 
-function MenuItems({fontSize, imgWidth}) {
-    return (
-        <div style={{display: 'flex', flexDirection: 'row'}}>
-            {
-                MenuList.main_menu.map(item => <MenuItem key={item.title} icon={item.icon} title={item.title} fontSize={fontSize} imgWidth={imgWidth} />)
-            }
-        </div>
-    )
-}
-
-function MenuItem({icon, title, fontSize, imgWidth}) {
-    return(
-        <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            marginRight: 10,
-            marginLeft: 10 
-            }}>
-          
-            <img src={`app_icons/${icon}.png`} width={imgWidth} />
-            <Typography sx={{color: 'grey', fontSize: fontSize}}>{title}</Typography>
-            
-        </div>
-    );
-}
-
 function MainContent() {
     return (
         <div style={{ 
@@ -86,7 +61,7 @@ function MainContent() {
             flexDirection: 'column', 
             alignItems: 'center', 
             position: 'absolute', 
-            top: '20%', 
+            top: '20%',
             margin: 'auto', 
             width:'100%' 
             }}>

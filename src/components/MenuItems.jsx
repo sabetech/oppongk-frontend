@@ -10,9 +10,7 @@ export default function MenuItems({fontSize, imgWidth}) {
                 MenuList.main_menu.map(item => 
                 {
                     return (
-                <Link to={item.path}>
-                    <MenuItem key={item.title} icon={item.icon} title={item.title} fontSize={fontSize} imgWidth={imgWidth} />
-                </Link>
+                        <MenuItem key={item.title} path={item.path} icon={item.icon} title={item.title} fontSize={fontSize} imgWidth={imgWidth} />
                 )
                 }
             )
@@ -21,19 +19,21 @@ export default function MenuItems({fontSize, imgWidth}) {
     )
 }
 
-function MenuItem({icon, title, fontSize, imgWidth}) {
+function MenuItem({path, icon, title, fontSize, imgWidth}) {
     return(
-        <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            marginRight: 10,
-            marginLeft: 10 
-            }}>
-          
-            <img src={`app_icons/${icon}.png`} width={imgWidth} />
-            <Typography sx={{color: 'grey', fontSize: fontSize}}>{title}</Typography>
+        <Link to={path} key={path}>
+            <div style={{ 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                marginRight: 10,
+                marginLeft: 10 
+                }}>
             
-        </div>
+                <img src={`app_icons/${icon}.png`} width={imgWidth} />
+                <Typography sx={{color: 'grey', fontSize: fontSize}}>{title}</Typography>
+                
+            </div>
+        </Link>
     );
 }
