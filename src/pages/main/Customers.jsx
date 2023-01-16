@@ -4,6 +4,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { styled, lighten, darken } from '@mui/system';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import { DataGrid } from '@mui/x-data-grid';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 
@@ -60,6 +61,7 @@ export default function Customers() {
                     )}
                 />
             </Stack>
+            <CustomerTable />
         </div>
     );
 }
@@ -68,11 +70,23 @@ function CustomerTable() {
 
     const columnsSchema = [
         { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'firstName', headerName: 'First name', width: 130 },
-        { field: 'lastName', headerName: 'Last name', width: 130 },
-        { field: 'phone', headerName: 'Phone number', width: 80 },
-        { field: 'total_spent', headerName: 'Total Spent', width: 120 },
+        { field: 'firstName', headerName: 'First name', width: 200 },
+        { field: 'lastName', headerName: 'Last name', width: 200 },
+        { field: 'phone', headerName: 'Phone number', width: 200 },
+        { field: 'total_spent', headerName: 'Total Spent', width: 200 },
     ];
 
-    const rows = [];
+    const rows = [{ id: 1, lastName: 'Snow', firstName: 'Jon', phone: 234535, total_spent: 23 },];
+
+    return (
+        <div style={{ height: 400, width: '80%' }}>
+            <DataGrid
+                rows={rows}
+                columns={columnsSchema}
+                pageSize={5}
+                rowsPerPageOptions={[5]}
+                checkboxSelection
+            />
+        </div>
+    );
 }
