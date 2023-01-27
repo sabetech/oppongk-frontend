@@ -1,8 +1,7 @@
 import React from "react";
 import _ from 'lodash';
 import Stack from "@mui/material/Stack";
-import { Table } from 'semantic-ui-react';
-import { Button } from 'semantic-ui-react'
+import { Table, Button, Pagination, Input } from 'semantic-ui-react'
 
 export default function Items() {
 
@@ -14,7 +13,20 @@ export default function Items() {
                 <Button>New Item</Button>
                 <Button>CSV Import</Button>
             </Stack>
-            <ItemsTable items={{}}/>
+            <Stack direction="row" spacing={2} justifyContent="flex-end" sx={{marginRight: 5}}>
+            <Input action='Search' placeholder='Search...' style={{ marginTop: 20 }} />
+            </Stack>
+            <ItemsTable items={{}} />
+
+            <Pagination
+                defaultActivePage={1}
+                firstItem={null}
+                lastItem={null}
+                pointing
+                secondary
+                totalPages={3}
+                style={{marginTop: 20, marginLeft: 20}}
+            />
         </div>
     );
 }
