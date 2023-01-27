@@ -26,9 +26,9 @@ export default function Root() {
 function TopBarInfo() {
     return (
         <div className='topbar'>
-            <Typography>Time & date</Typography>
-            <Typography>Time & date</Typography>
-            <Typography>Time & date</Typography>
+            <Typography sx={{fontSize: 12}}>Time & date</Typography>
+            <Typography sx={{fontSize: 12}}>Oppong Kyekyeku LTD</Typography>
+            <Typography sx={{fontSize: 12}}>Time & date</Typography>
         </div>
     );
 }

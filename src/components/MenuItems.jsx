@@ -29,10 +29,8 @@ function MenuItem({path, icon, title, fontSize, imgWidth}) {
                 marginRight: 10,
                 marginLeft: 10 
                 }}>
-            
                 <img src={`app_icons/${icon}.png`} width={imgWidth} />
                 <Typography sx={{color: 'grey', fontSize: fontSize}}>{title}</Typography>
-                
             </div>
         </Link>
     );

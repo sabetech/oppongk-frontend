@@ -8,7 +8,9 @@ import {
 import Root from './routes/Root';
 import Home from './pages/main/Home';
 import './index.css';
+import 'semantic-ui-css/semantic.min.css'
 import Customers from './pages/main/Customers';
+import Items from './pages/main/Items';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/customers",
         element: <Customers />
+      },
+      {
+        path: "/items",
+        element: <Items />
       }
     ],
   },
