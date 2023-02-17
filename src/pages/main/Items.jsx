@@ -1,5 +1,6 @@
 import React from "react";
 import _ from 'lodash';
+import { Header } from "semantic-ui-react";
 import Stack from "@mui/material/Stack";
 import { Table, Button, Pagination, Input } from 'semantic-ui-react'
 
@@ -9,6 +10,7 @@ export default function Items() {
 
     return (
         <div style={{position: 'fixed', top: '15%'}}>
+            <Header as='h1'>Items</Header>
             <Stack direction="row" spacing={2} justifyContent="flex-end" sx={{marginRight: 5}}>
                 <Button>New Item</Button>
                 <Button>CSV Import</Button>
@@ -38,7 +40,7 @@ const AddNewItem = () => {
 // Make headings dynamic
 const ItemsTable = ({ items }) => {
     return (
-        <Table sortable celled fixed>
+        <Table sortable celled fixed style={{marginRight: 5}} >
             <Table.Header>
                 <Table.Row>
                     <Table.HeaderCell>ID</Table.HeaderCell>
@@ -47,7 +49,6 @@ const ItemsTable = ({ items }) => {
                     <Table.HeaderCell>Quantity</Table.HeaderCell>
                     <Table.HeaderCell>Wholesale Price</Table.HeaderCell>
                     <Table.HeaderCell>Retail Price</Table.HeaderCell>
-                    
                 </Table.Row>
             </Table.Header>
             <Table.Body>
