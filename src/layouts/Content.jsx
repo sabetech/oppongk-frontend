@@ -7,9 +7,12 @@ export default function Content({children}) {
             position: 'fixed', 
             top: '15%',
             marginLeft: '10%',
-            marginRight: '10%'
+            marginRight: '10%',
+            width: '80%'
             }}>
-            {{ children }}
+            
+            { children }
+
         </div>
     )
 }

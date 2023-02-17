@@ -1,24 +1,25 @@
 import React from "react";
-import _ from 'lodash';
-import Stack from "@mui/material/Stack";
-import { Header, Table, Button, Pagination, Input } from 'semantic-ui-react'
 import Content from "../../layouts/Content";
+import { Header, Button, Input, Pagination, Table } from "semantic-ui-react";
+import { Stack } from "@mui/material";
+import _ from 'lodash';
 
-export default function Items() {
+export default function Suppliers() { 
 
     const tableData = []
 
     return (
         <Content>
-            <Header as='h1'>Items</Header>
+            <Header as='h1'>Suppliers</Header>
             <Stack direction="row" spacing={2} justifyContent="flex-end" >
                 <Button>New Item</Button>
                 <Button>CSV Import</Button>
             </Stack>
             <Stack direction="row" spacing={2} justifyContent="flex-end" >
-            <Input action='Search' placeholder='Search...' style={{ marginTop: 20 }} />
+                <Input action='Search' placeholder='Search...' style={{ marginTop: 20 }} />
             </Stack>
-            <ItemsTable items={{}} />
+            
+            <SuppliersTable items={{tableData}} />
 
             <Pagination
                 defaultActivePage={1}
@@ -38,17 +39,15 @@ const AddNewItem = () => {
 }
 
 // Make headings dynamic
-const ItemsTable = ({ items }) => {
+const SuppliersTable = ({ items }) => {
     return (
         <Table sortable celled >
             <Table.Header>
                 <Table.Row>
                     <Table.HeaderCell>ID</Table.HeaderCell>
-                    <Table.HeaderCell>Item Name</Table.HeaderCell>
-                    <Table.HeaderCell>Category</Table.HeaderCell>
-                    <Table.HeaderCell>Quantity</Table.HeaderCell>
-                    <Table.HeaderCell>Wholesale Price</Table.HeaderCell>
-                    <Table.HeaderCell>Retail Price</Table.HeaderCell>
+                    <Table.HeaderCell>Suppliers Name</Table.HeaderCell>
+                    <Table.HeaderCell>Email</Table.HeaderCell>
+                    <Table.HeaderCell>Phone</Table.HeaderCell>
                 </Table.Row>
             </Table.Header>
             <Table.Body>
@@ -61,4 +60,5 @@ const ItemsTable = ({ items }) => {
             </Table.Body>
         </Table>
     );
+
 }

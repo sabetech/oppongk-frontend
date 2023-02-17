@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { styled, lighten, darken } from '@mui/system';
-import Button from '@mui/material/Button';
+import { Button } from 'semantic-ui-react';
 import Stack from '@mui/material/Stack';
 import { DataGrid } from '@mui/x-data-grid';
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import Content from '../../layouts/Content';
+import { Header } from 'semantic-ui-react';
 
 const GroupHeader = styled('div')(({ theme }) => ({
     position: 'sticky',
@@ -36,16 +36,17 @@ export default function Customers() {
       });
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', position: 'absolute', top: '15%', width: '100%'}}>
-            <Stack direction="row" spacing={2} sx={{justifyContent: 'flex-end', marginRight: '20%', marginBottom: 2}}>
-                <Button size="small" variant="outlined" startIcon={<PersonAddAlt1Icon />}>
+        <Content>
+            <Header as='h1'>Customers</Header>
+            <Stack direction="row" spacing={2} sx={{justifyContent: 'flex-end', marginBottom: 2}}>
+                <Button>
                     New Customer
                 </Button>
-                <Button size="small" variant="contained" startIcon={<InsertDriveFileIcon />}>
+                <Button>
                     Import Customers
                 </Button>
             </Stack>
-            <Stack direction="row" spacing={2} sx={{justifyContent: 'flex-end', marginRight: '20%'}}>
+            <Stack direction="row" spacing={2} sx={{justifyContent: 'flex-end'}}>
                 <Autocomplete
                     id="grouped-demo"
                     options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
@@ -62,7 +63,8 @@ export default function Customers() {
                 />
             </Stack>
             <CustomerTable />
-        </div>
+        </Content>
+        
     );
 }
 
@@ -79,7 +81,7 @@ function CustomerTable() {
     const rows = [{ id: 1, lastName: 'Snow', firstName: 'Jon', phone: 234535, total_spent: 23 },];
 
     return (
-        <div style={{ height: 400, width: '80%' }}>
+        <div style={{ height: 400 }}>
             <DataGrid
                 rows={rows}
                 columns={columnsSchema}
